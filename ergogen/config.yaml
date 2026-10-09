@@ -1,0 +1,329 @@
+units:
+  # kx and ky allow for easy- easi-er switching between MX and Choc.
+  kx: u
+  ky: u
+  px: kx + 2
+  py: ky + 2
+  # These variables allow for updating the previews on https://ergogen.ceoloide.com
+  $default_width: u
+  $default_height: u
+  # KiCAD places the PCB in the middle of nowhere to start with.
+  # These variables give a starting place for later shifts.
+  starting_x: 100
+  starting_y: -100
+
+  starting_x_right: 150
+  starting_y_right_adjust_rotated: 10.5
+  starting_y_right_adjust: 3
+
+  # Defaults to M2 Screws
+  screwSize: 1
+  standoffSize: 2.5
+
+meta:
+  engine: 4.1.0
+
+points:
+  zones:
+# left side
+    r2:
+      anchor:
+        shift: [starting_x+kx+0.5kx, starting_y-0.1ky]
+      columns:
+        q:
+          key:
+            spread: 1.5kx
+
+    r2_shifted:
+      anchor:
+        shift: [starting_x+kx+0.5kx+1kx+1kx+0.1kx, starting_y+2ky-0.2ky]
+      columns:
+        w:
+          key:
+        e:
+          key:
+        r:
+          key:
+        t:
+          key:
+      rotate: -12
+
+    r3:
+      anchor:
+        shift: [starting_x+1kx+0.625kx, starting_y-ky-0.1ky]
+      columns:
+        a:
+          key:
+            spread: 1.75kx
+
+    r3_shifted:
+      anchor:
+        shift: [starting_x+1.25kx+0.625kx+1kx+1kx, starting_y-ky+2ky-0.2ky]
+      columns:
+        s:
+          key:
+        d:
+          key:
+        f:
+          key:
+        g:
+          key:
+      rotate: -12
+
+    r4:
+      anchor:
+        shift: [starting_x+1kx+0.875kx, starting_y-2ky-0.1ky]
+      columns:
+        z:
+          key:
+            spread: 2.25kx
+            
+    r4_shifted:
+      anchor:
+        shift: [starting_x+1.1kx+0.875kx+1kx+1kx+0.4kx, starting_y-2ky+2ky-0.2ky]
+      columns:
+        x:
+          key:
+        c:
+          key:
+        v:
+          key:
+        b:
+          key:
+      rotate: -12
+
+    left_thumb1:
+      anchor:
+        shift: [starting_x+1.1kx+0.875kx+1kx+1kx+0.4kx+0.25kx, starting_y-2ky+2ky-0.2ky-1ky]
+      columns:
+        t1:
+          key:
+            width: 1.25kx
+            tags: key1.25u
+        t2:
+          key:
+            width: 2.75kx
+            spread: 2kx
+            tags: key2.75u
+      rotate: -12
+
+    left_thumb2:
+      anchor:
+        shift: [starting_x+1kx+0.875kx-0.125kx, starting_y-2ky-1ky-0.1ky]
+      columns:
+        t1:
+          key:
+            width: 1.25kx
+            tags: key1.25u
+
+# right side
+    r2right_rotated:
+      anchor:
+        shift: [starting_x + starting_x_right-1.5kx-0.05kx, starting_y-3.9ky+starting_y_right_adjust+starting_y_right_adjust_rotated]
+      columns:
+        y:
+          key:
+        u:
+          key:
+        i:
+          key:
+        o:
+          key:
+      rotate: 12
+
+    r2right:
+      anchor:
+        shift: [starting_x + starting_x_right+4kx, starting_y+starting_y_right_adjust]
+      columns:
+        p:
+          key:
+      rows:
+        single:
+    
+    r3right_rotated:
+      anchor:
+        shift: [starting_x + starting_x_right + 0.37kx-1.5kx-0.25kx, starting_y - ky-3.9ky+starting_y_right_adjust+starting_y_right_adjust_rotated]
+      columns:
+        h:
+          key:
+        j:
+          key:
+        k:
+          key:
+        l:
+          key:
+      rotate: 12
+
+    r3right:
+      anchor:
+        shift: [starting_x + starting_x_right + 0.37kx+4ky+0.1kx, starting_y - ky+starting_y_right_adjust]
+      columns:
+
+        semicolon:
+          key:
+
+      rows:
+        single:
+    
+    r4right_rotated:
+      anchor:
+        shift: [starting_x + starting_x_right-3-1.5kx-0.25kx, starting_y - 2ky-3.9ky+starting_y_right_adjust+starting_y_right_adjust_rotated]
+      columns:
+        b:
+          key:
+        n: 
+          key: 
+        m: 
+          key: 
+        comma: 
+          key:
+      rotate: 12
+
+    r4right:
+      anchor:
+        shift: [starting_x + starting_x_right-3+4kx+0.25kx, starting_y - 2ky+starting_y_right_adjust]
+      columns:
+        peroid:
+          key:
+        slash:
+          key:
+      rows:
+        single:
+    
+    right_thumb1:
+      anchor:
+        shift: [starting_x + starting_x_right-3-1.5kx-0.25kx-0.25kx, starting_y - 2ky-3.9ky+starting_y_right_adjust+starting_y_right_adjust_rotated-1ky]
+      columns:
+        t1:
+          key:
+        t2: 
+          key:
+            width: 2.25kx
+            spread: 1.625kx
+            tags: key2.25u
+        t3:
+          key:
+            width: 1.25kx
+            spread: 1.75kx
+            tags: key1.25u
+      rotate: 12
+
+    right_thumb2:
+      anchor:
+        shift: [starting_x + starting_x_right-3+4kx+0.25kx +0.6kx, starting_y - 2ky+starting_y_right_adjust-1ky]
+      columns:
+        t1:
+          key:
+            width: 1.25kx
+            tags: key1.25u
+
+      rows:
+        single:
+
+
+    
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+      fillet: 1
+    - what: rectangle
+      where: [key2.25u]
+      size: [kx*2.25-0.5, ky-0.5]
+      fillet: 1
+    - what: rectangle
+      where: [key2.75u]
+      size: [kx*2.75-0.5, ky-0.5]
+      fillet: 1
+    - what: rectangle
+      where: [key1.25u]
+      size: [kx*1.25-0.5, ky-0.5]
+      fillet: 1
+  outline:
+    - what: path
+      operation: stack
+      fillet: 2
+      segments:
+        - type: line
+          points:
+            - ref: r2_q
+              shift: [-0.79px, 0.7py]
+            - ref: r2_q
+              shift: [11px, 0.7py]
+            - ref: r2_q
+              shift: [11px, -3.5py]
+            - ref: r2_q
+              shift: [4.8px, -4py]
+            - ref: r2_q
+              shift: [-0.79px, -3.5py]
+  switch_plate_keys:
+    - what: rectangle
+      where: true
+      size: [kx-5,ky-5]
+  combo:
+    - name: outline
+    - name: keys
+      operation: stack
+
+  xlBoard:
+    - name: outline
+      expand: 2
+    # - name: mounting
+    #   operation: subtract
+
+
+  switch_plate:
+    - name: xlBoard
+    - operation: subtract
+      name: switch_plate_keys
+
+  wall_outline:
+    - name: xlBoard
+    - operation: subtract
+      name: outline
+
+  middle_standoff:
+    - what: rectangle
+      size: [1kx/3, 4ky]
+  
+  switch_plate2:
+    - operation: stack
+      name: switch_plate_keys
+    - operation: stack
+      name: wall_outline
+    
+
+
+
+cases:
+  # _holes:
+  #   - name: mounting
+  #     extrude: 2
+  # _standoffs:
+  #   - name: standoff
+  #     extrude: 2
+  wall:
+    - name: wall_outline
+      extrude: 9
+  plate_tester:
+    - what: case
+      name: wall
+    - name: middle_standoff
+      extrude: 9
+      shift: [180+2.7kx,-100-2ky,0]
+    - name: switch_plate
+      shift: [0,0,7]
+      extrude: 2
+  case:
+    # - what: case
+    #   name: _standoffs
+    #   operation: add
+    # - what: case
+    #   name: _holes
+    #   operation: subtract
+    - what: case
+      name: wall
+      operation: add
+    - name: xlBoard
+      operation: add
